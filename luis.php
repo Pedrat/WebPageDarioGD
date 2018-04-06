@@ -41,6 +41,8 @@ $valida = 0;
 if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']) && isset($_POST['email']) && isset($_POST['idade'])) {
 
 
+  if ($_POST["psw"] == $_POST["psw-repeat"]){
+
 
   $user=$_POST["uname"];
   $pass=$_POST["psw"];
@@ -58,7 +60,10 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
   $sql="INSERT INTO `Glowing_Juniper` (`Id`, `Username`, `Password`, `Email`, `Age`) VALUES (NULL, '".$user."', '".$pass."', '".$email."', '".$age."');";
   #echo $sql;
   $result = mysqli_query($conn,$sql);
-}
+  }
+  else{
+    echo "Fode-te";
+  }
 
 else{
   echo "Variaveis vazias";
