@@ -1,0 +1,8 @@
+<?php
+
+$var1=$_GET("Iid");
+$var2=$_GET("name");
+
+echo $VAR1;
+echo $VAR2;
+?>
