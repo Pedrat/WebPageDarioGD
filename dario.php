@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["Id"]. " - Name: " . $row["Nome"]. " - Password: " . $row["Pass"]. "<br>";
+        #echo "id: " . $row["Id"]. " - Name: " . $row["Nome"]. " - Password: " . $row["Pass"]. "<br>";
         if ($nome == $row["Nome"] && $pass == $row["Pass"]) {
           $valida=1;
         }

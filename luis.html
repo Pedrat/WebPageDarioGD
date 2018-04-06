@@ -14,18 +14,20 @@
 
 <BODY BGCOLOR="FFFFFF">
 
-<form action="action_page.php" style="border:1px solid #ccc">
+<form action="luis.php" method="post" style="border:1px solid #ccc" >
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
+		<label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Insira Username" name="uname" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Inisra Email" name="email" required>
+    <input type="text" placeholder="Insira Email" name="email" required>
 
     <label for="idade"><b>Idade</b></label>
     <input type="number" placeholder="Insira idade" name="idade" required>
-
+		<p>
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
