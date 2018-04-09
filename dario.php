@@ -11,9 +11,8 @@ $valida = 0;
 
 
 
-
-
-
+//$python=exec("python3 python.py");
+//echo $python;
 
 
 

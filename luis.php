@@ -16,7 +16,7 @@ $valida = 0;
 
 
 
-
+//header('Location: http://www.google.com');
 
 
 
@@ -62,7 +62,10 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
   $result = mysqli_query($conn,$sql);
   }
   else{
-    echo "Fode-te";
+    //echo "As palavras passes nao sao iguais.";
+    sleep ( 2 );
+    header('Location: luis.html');
+
   }
 }
 
