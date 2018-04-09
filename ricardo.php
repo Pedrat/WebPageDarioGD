@@ -54,6 +54,8 @@ if ($result->num_rows > 0) {
         //echo "id: " . $row["Id"]. " - Name: " . $row["Username"]. " - Password: " . $row["Password"]. "<br>";
         if ($nome == $row["Username"] && $pass == $row["Password"]) {
           $valida=1;
+          session_start();
+          $_SESSION["user"]=$row["Username"];
         }
     }
 } else {
@@ -61,6 +63,8 @@ if ($result->num_rows > 0) {
 }
 if ($valida == 1) {
   echo "Logged in.";
+  //echo $_SESSION["user"];
+  header('Location: index.html');
 }
 else {
   echo "Unsucesseful log in.";
