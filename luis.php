@@ -44,11 +44,11 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
   if ($_POST["psw"] == $_POST["psw-repeat"]){
 
 
-  $user=$_POST["uname"];
-  $pass=$_POST["psw"];
-  $passcheck=$_POST["psw-repeat"];
-  $email=$_POST["email"];
-  $age=$_POST["idade"];
+  $user=htmlentities($_POST["uname"]);
+  $pass=htmlentities($_POST["psw"]);
+  $passcheck=htmlentities($_POST["psw-repeat"]);
+  $email=htmlentities($_POST["email"]);
+  $age=htmlentities($_POST["idade"]);
 
 
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,6 +64,7 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
   else{
     echo "Fode-te";
   }
+}
 
 else{
   echo "Variaveis vazias";
