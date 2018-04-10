@@ -7,8 +7,8 @@ if (isset($_SESSION["user"])){
 else{
 
 
-		echo "Not loged in!<br>";
-		echo $_SESSION["user"];
+		//echo "Not loged in!<br>";
+		//echo $_SESSION["user"];
 		header('Location: fatima2.html');
     //header('Location: luis.html');
 		//<html>
