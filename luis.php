@@ -42,14 +42,15 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
 
 
   if ($_POST["psw"] == $_POST["psw-repeat"]){
-
+  if ($_POST["idade"] <= 18 ){
 
   $user=htmlentities($_POST["uname"]);
   $pass=htmlentities($_POST["psw"]);
   $passcheck=htmlentities($_POST["psw-repeat"]);
   $email=htmlentities($_POST["email"]);
   $age=htmlentities($_POST["idade"]);
-
+  $flag=htmlentities($_POST["flag"]);
+  echo $flag;
 
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -60,11 +61,21 @@ if (isset($_POST['uname']) && isset($_POST['psw']) && isset($_POST['psw-repeat']
   $sql="INSERT INTO `Glowing_Juniper` (`Id`, `Username`, `Password`, `Email`, `Age`) VALUES (NULL, '".$user."', '".$pass."', '".$email."', '".$age."');";
   #echo $sql;
   $result = mysqli_query($conn,$sql);
+  header('Location: index.html');
   }
   else{
-    //echo "As palavras passes nao sao iguais.";
+    //Idade insuficiente
+    sleep (1);
+
+
+    header('Location: luis2.php?flag=2');
+
+  }
+}
+  else{
+    //As palavras passes nao sao iguais.
     sleep ( 2 );
-    header('Location: luis.html');
+    header('Location: luis2.php?flag=1');
 
   }
 }
